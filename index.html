@@ -1,112 +1,205 @@
+<ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    Lorem.
+</ol>
 <!-- Bir satırı açıklama satırı yapmak istiyorsak (ctrl + ö) tuşlarına basmam lazım -->
 <!-- bu kod bloğu ile açıklama satırı ekleyebilirim. -->
+<!--
 #---#
-<!-- BAŞLIKLAR BAŞLADI -->
-<h1>Başlık eklemek için kullanılır.</h1>
-<h2>1-6 adet başlık çeşidimiz vardır olur.</h2>
-<h3>3. Başlık</h3>
-<h4>4. Başlık</h4>
-<h5>5. Başlık</h5>
-<h6>6. Başlık</h6>
-<!-- BAŞLIKLAR BİTTİ -->
-#---#
-<!-- PARAGRAF BAŞLADI -->
-<p>paragraf eklemek için kullanılır sonsuz paragraf olabilir sadece kapatmayı unutma yeter.</p>
-<!-- PARAGRAF BİTTİ -->
-#---#
-<!-- LİSTELER BAŞLADI -->
-<ol>Sıralı liste oluşturmak için kullanılır</ol>
-<ul>Sırasız liste oluşturmak için kullanılır</ul>
-<li>liste itemi eklenir böyle</li>
-<!-- ÖRNEK KULLANIM -->
-<ol>
-    <li>KADİR</li>
-    <li>ÇAĞRI</li>
-    <li>AKİF</li>
-    <li>APO</li>
-</ol>
-<ul>
-    <li>KADİR</li>
-    <li>ÇAĞRI</li>
-    <li>AKİF</li>
-    <li>APO</li>
-</ul>
 
-<br>
-<!-- İÇ İÇE LİSTE KULLANMA ŞEKLİ -->
+ BAŞLIKLAR BAŞLADI 
+
+1.AÇIKLAMA => 6 ADET BAŞLIK ÇEŞİDİ VARDIR BUNLARIN KISAYOL KULLANIMI ŞUDUR -> (h1-h6)
+        1.ÖRNEK => <h1>deneme başlık 1</h1>
+            2.ÖRNEK => <h6>deneme başlık 2</h6>
+
+ BAŞLIKLAR BİTTİ 
+
+#---#
+
+ PARAGRAF BAŞLADI 
+
+1.AÇIKLAMA => BİRDEN FAZLA PARAGRAF KULLANILABİLİR SADECE KAPATMAYI UNUTMA YETER KULLANIM KISAYOLU ŞUDUR -> (p)
+        1.ÖRNEK => <p>Paragraf-Örneği</p>
+
+PARAGRAF BİTTİ 
+#---#
+
+-LİSTELER BAŞLADI-
+
+1.AÇIKLAMA => 2 ÇEŞİT LİSTE TÜRÜ VARDIR...
+    2.AÇIKLAMA => 1.SIRALI LİSTELER KULLANIM KISAYOLU ŞUDUR ->          (ol)
+        3.AÇIKLAMA => 2.SIRASIZ LİSTELER KULLANIM KISAYOLU ŞUDUR ->     (ul)
+            1.ÖRNEK => ol>li
+                2.ÖRNEK => ul>li
+
+1.AÇIKLAMA => İÇ İÇE LİSTE KULLANMA ÖRNEKLERİ.
+    1.ÖRNEK => ol>li+ul>li
+        2.ÖRNEK => 
+
+DİP NOT => Sıralı veya Sırasız liste oluşturmak için içerisine item eklememiz gereklidir bu şekilde (li) 
+
+-LİSTELER BİTTİ-
+ 
+ #---#
+
+-EMMET BAŞLADI- 
+- EMMET LİNKİ (https://docs.emmet.io/cheat-sheet/) -
+
+(+) =>
+1.AÇIKLAMA => işareti kullanırsak kardes element oluşturuyorum. Birden fazla degisken olusturmak icin mesela şu şekilde
+"h1" - "h2" yi tek tek yazmak yerine
+    1.ÖRNEK => (h1+h2+p+p+h3+p) => yazarsam toplu degisken olusturmus oluyorum tek seferde.
+        2.ÖRNEK => (h1+h2+p*3+h3+p*4) => yazarsam daha kısa hali ile olusmus oluyor.)
+
+#---#
+
+(*) => 
+1.AÇIKLAMA => carp manasına geliyor.
+  1.ÖRNEK => (p => paragraf demek) -> (örnek => p*3) -> 3 tane paragraf oluştur demek.
+     2.ÖRNEK => (h1+h2+p*3+h3+p*4) -> yazarsam daha kısa hali ile degisken olusmus oluyor.)
+    
+#---#
+    
+(>) =>  
+1.AÇIKLAMA => işareti kullanırsak içinde ögesi olusuyor.
+Mesela bir liste yapınca içinde öğeler olusturmak istiyoruz şu şekilde.
+    1.ÖRNEK => (ul>li /// ul>li*5) -> İkiside olur
+
+#---#
+
+(^) (shift + 3 tuşlarına bas yap) =>    
+1.AÇIKLAMA => (^ birden fazla kullanılabilir)
+2.AÇIKLAMA => ^ işareti kullanırsak içinde isek ve üste çıkmak istiyorsak bu işareti kullanıyorum ve tekrar öge olusuyor.
+1.ÖRNEK => ul>li*3^p*2+h1     (DOĞRU KULLANIM)
+2.ÖRNEK => ul>li*2>lorem2^^p*2>lorem3^h3>lorem1  (DOĞRU KULLANIM)
+
+3.ÖRNEK => ul>li*2>lorem2^p*2>lorem3^h3>lorem1   (HATALI KULLANIM)
+ÇÜNKÜ => listenin içerisine lorem yazdırdıktan sonra listeyi bitir demedik bunu demek için
+2 tane (^) işareti kullanmam gerekir 2.örnek gibi ↑)
+
+4.ÖRNEK => KOD PARÇASI  (ol>li*4>lorem2^p*3>lorem3^ul>li*4>lorem4^^h1>lorem2)
+1.AÇIKLAMA => KODUN TÜRKÇE ÖZETİ
+(4 tane sıralı liste oluşturuyoruz sonra içerisine 2 cümlelik bir lorem yazdırıyoruz sonra 3 tane paragraf oluşturup içerisine 3 cümlelik bir lorem yazdırıyoruz. Akabinde bunun "içerisine" bir de 4 adet sırasız liste oluşturup içerisine 4 cümlelik bir lorem yazdırıyoruz ve bununda "içerisine" bir paragraf oluşturup o paragrafın'da içerisine 2 cümlelik bir lorem yazdırıyoruz)
+4.ÖRNEĞİN KOD PARÇASININ ÇIKTISI =>
 <ol>
-    <li>KADİR</li>
-    <li>ÇAĞRI</li>
+    <li>Lorem, ipsum.</li>
+    <li>Velit, id.</li>
+    <li>Iusto, quod!</li>
+    <li>Modi, exercitationem!</li>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Molestiae, eveniet quae?</p>
+    <p>Culpa, error sapiente!</p>
     <ul>
-        <li>KADİR</li>
-        <li>ÇAĞRI</li>
-        <li>AKİF</li>
-        <li>APO</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Necessitatibus, amet pariatur. Provident!</li>
+        <li>Recusandae provident culpa expedita!</li>
+        <li>Exercitationem tenetur dolores voluptatibus!</li>
     </ul>
-    <li>AKİF</li>
-    <li>APO</li>
+    <h1>Lorem, ipsum.</h1>
 </ol>
-<!-- Sıralı veya Sırasız liste oluşturmak için içerisine item eklememiz gereklidir bu şekilde (<li></li>) -->
-<!-- LİSTELER BİTTİ -->
+
 #---#
-<!-- EMMET BAŞLADI -->
-<!-- BİLGİLERİ ASSAGİDA -->
-
-<!-- 
-
-    #---#
-
-    (+) =>
-    AÇIKLAMA => işareti kullanırsak kardes element oluşturuyorum. Birden fazla degisken olusturmak icin mesela şu şekilde "h1" - "h2" yi tek tek yazmak yerine
-        ÖRNEK => (h1+h2+p+p+h3+p) => yazarsam toplu degisken olusturmus oluyorum tek seferde.
-            ÖRNEK => (h1+h2+p*3+h3+p*4) => yazarsam daha kısa hali ile olusmus oluyor.)
-
-    #---#
-
-    (*) => 
-    AÇIKLAMA => carp manasına geliyor.
-        ÖRNEK => (p => paragraf demek) -> (örnek => p*3) -> 3 tane paragraf oluştur demek.
-            ÖRNEK => (h1+h2+p*3+h3+p*4) -> yazarsam daha kısa hali ile degisken olusmus oluyor.)
     
-    #---#
+(lorem) => 
+1.AÇIKLAMA => (https://tr.lipsum.com/) Random yazılar oluşturmak için gereklidir.
+   1.ÖRNEK => (lorem)
+
+#---#
     
-    (>) =>  
-    AÇIKLAMA => işareti kullanırsak içinde ögesi olusuyor. Mesela bir liste yapınca içinde öğeler olusturmak istiyoruz şu şekilde.
-        ÖRNEK => (ul>li /// ul>li*5) -> İkiside olur
+(.) => 
+1.AÇIKLAMA => class olusturmak icin kullaniyorum.
+    ÖRNEK => .denemeclass
+        1.ÖRNEK => h3.denemeclass>lorem1
+            2.ÖRNEK => h3.denemeclass#denemeid>lorem1
+                3.ÖRNEK => ul>.text*3
+                    4.ÖRNEK => ul>li.item$*4
+#---#
 
-    #---#
+# => 
+1.AÇIKLAMA => id olusturmak için kullaniyorum.
+    1.ÖRNEK => #denemeid
+        2.ÖRNEK => h1#denemeid>lorem1
+            3.ÖRNEK => h3.denemeclass#denemeid>lorem1
+                4.ÖRNEK => div>p#item*6>lorem1
 
-    (^) (shift  tuşlarına bas yap) =>    
-    AÇIKLAMA => (^ birden fazla kullanılabilir) ^ işareti kullanırsak içinde isek ve üste çıkmak istiyorsak bu işareti kullanıyorum ve tekrar öge olusuyor.
-        1.ÖRNEK => ul>li*3^p*2+h1     (DOĞRU KULLANIM)
-            2.ÖRNEK => ul>li*2>lorem2^^p*2>lorem3^h3>lorem1   (DOĞRU KULLANIM)
-                3.ÖRNEK => ul>li*2>lorem2^p*2>lorem3^h3>lorem1    (HATALI KULLANIM ÇÜNKÜ => listenin içerisine lorem yazdırdıktan sonra listeyi bitir demedik bunu demek için
-                 2 tane (^) işareti kullanmamız gerekir 2.örnek gibi)
+1.AÇIKLAMA => OTOMATİK ARTIŞ SAĞLAMAMIZ GEREKEN DURUMLARDA BU İFADE KULLANILIR ($)
+2.AÇIKLAMA => KAÇ KERE ARTMASINI İSTİYORSAK ($*) diye kullanırız -> Mesela böyle ($*2) 1 den 2 ye sayı arttırır.
+    1.ÖRNEK =>  HATALI KULLANIMDIR ! (ul>li#id1+li#id2+li#id3) BU KADAR UZUN YAZMAK YERİNE
+        2.ÖRNEK =>  DOĞRU KULLANIMDIR ! (ul>li#idNo$*3) BU KADAR KISA BİR KOD'A DÖNÜŞEBİLİR.
 
-    #---#
-    
-    (lorem) => 
-    AÇIKLAMA => (https://tr.lipsum.com/) Random yazılar oluşturmak için gereklidir.
-        ÖRNEK => lorem
+table =>
+1.AÇIKLAMA => Tablo Oluşturmak için kullanılır
+    1.ÖRNEK => (table)
 
-    #---#
-    
-    (.) => 
-    AÇIKLAMA => class olusturmak icin kullaniyorum.
-        ÖRNEK => .denemeclass
-            ÖRNEK => h3.denemeclass>lorem1
-                ÖRNEK => h3.denemeclass#denemeid>lorem1
-                    ÖRNEK => ul>.text*3
-                        ÖRNEK => ul>li.item$*4
-    #---#
+tr =>
+1.AÇIKLAMA => Satır oluşturmak için kullanılır
+    1.ÖRNEK => tr
 
-    # => id olusturmak için kullaniyorum.
-    AÇIKLAMA => 
-        ÖRNEK => #denemeid
-            ÖRNEK => h1#denemeid>lorem1
-                ÖRNEK => h3.denemeclass#denemeid>lorem1
-                    ÖRNEK => div>p#item*6>lorem1
+td =>
+1.AÇIKLAMA => Sütun oluşturmak için kullanılır
+    1.ÖRNEK => td
 
-    #---#
+-EMMET BİTTİ-
+
+#---#
 
 -->
+
+<!-- 
+    - EMMET ALIŞTIRMALARI -
+
+1.SORU => aşağıdaki yapıyı oluşturmanın kodu ne olurdu?
+
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+1.CEVAP => (div>ul>li*3)
+---------------------------
+2.SORU => 3 satır ve 3 sütunlu bir tablo oluşturmanın kodu ne olurdu?
+
+<table border="1">
+    <body>
+        <tr>
+            <td><button>KAYDET</button></td>
+            <td>KADİR</td>
+            <td>AKİF</td>
+        </tr>
+        <tr>
+            <td>KADİR</td>
+            <td>100</td>
+            <td>99</td>
+        </tr>
+        <tr>
+            <td>AKİF</td>
+            <td>100</td>
+            <td>99</td>
+        </tr>
+    </body>
+</table>
+
+2.CEVAP => (table>body>tr*3>td*3) tablenin içine border ekleyip değerini 1 yapmayı unutma 
+---------------------------
+3.SORU => Aşağıdaki yapıyı oluşturmanın kodu ne olurdu?
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body></body>
+</html>
+
+3.CEVAP => (hmtl>head>title^body)
+---------------------------
+4.SORU => Aşağıdaki kodun ne üreteceğini (kısaca kelimelerle) açıklayın:
+                            tablo>tr*3>td*5
+
+4.CEVAP => 3 Satır 5 Sütunluk bir tablo oluşturur
+--------------------------- -->
